@@ -3,10 +3,13 @@ public class Main {
         Calculator calc = Calculator.instance.get();
 
         int a = calc.plus.apply(1, 2);
-        int b = calc.minus.apply(1, 1);
+        int b = calc.minus.apply(1,1);
+        int c = calc.divide.apply(a, b);
 
-        Integer c = b == 0 ? null : calc.devide.apply(a, b);
-        String message = c == null ? "Деление на ноль невозможно!" : String.valueOf(c);
-        System.out.println(message);
+        if (c == 0) {
+            System.out.println("Деление на ноль невозможно!");
+        } else {
+            calc.println.accept(c);
+        }
     }
 }
